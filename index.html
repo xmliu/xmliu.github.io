@@ -3,6 +3,47 @@
 		<title>刘训明的个人主页</title>
 	</head>
 	<body>
+		<div class="header">  
+	<div class="headercon container clearfix">
+        <div class="row">
+            <div class="col-md-12">
+            	<!-- 导航部分 -->
+                <a class="logo-t" href="/"><img width="181" src="/templets/jcodecraeer/images/logo.png"></a>
+                <ul class="nav-ul">
+                	<li id="nav-index"><a href="/" >首页</a></li>
+                    <li id="nav-code"><a href="/plus/list.php?tid=31" >代码</a></li>
+                    <li id="nav-ask"><a class="" href="/ask" >问答</a></li>
+                    <li id="nav-tag"><a href="/tags.php" class="trigger">标签</a></li>
+                    <li><a href="/about.html" class="">关于</a></li>
+                </ul>
+                <!-- 导航部分 end -->
+                
+                <!-- 搜索-下拉 -->
+                <div class="header_right">
+                	<div class="search_start">
+                         <div class="search_cont">
+                            <form action="/plus/search.php" method="get">
+                            	<input type="hidden" name="kwtype" value="0" />
+                                <input type="text" name="q" class="in_search" autocomplete="off" value="搜索"/>
+                                <input type="submit" class="in_submit" />
+        						<span class="glyphicon glyphicon-search icon-search"></span>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- 消息下拉 -->
+                    <div class="header_right_msg z">  
+                        <!-- 登录 -->
+                        <div class="right_login" id="login_info">
+                            <a class="l" href="/member/login.php">登录</a>
+                            <a href="/member/reg_new.php">注册</a>
+                        </div>
+                        <!-- 登录 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 		<h1>我的主页 by xmliu</h1>
 	</body>
 </html>
