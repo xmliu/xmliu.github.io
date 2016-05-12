@@ -1,3 +1,3 @@
 # xmliu.github.io
-打造博客专属域名，浏览器访问 <http://liuxunming.com> ，即可重定向到个人CSDN博客主页，很有意思！<br>
-参考鸿洋大神博客搭建<http://blog.csdn.net/lmj623565791/article/details/51319147>
+1.index.html,visit this site <http://liuxunming.com> on your browser.<br>
+2.index_backup.html,ref <http://blog.csdn.net/lmj623565791/article/details/51319147>,may redirect my csdn blog,it is interesting.
