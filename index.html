@@ -60,29 +60,30 @@
 
     </script>
 
-    <script type="text/javascript">
-        var phoneWidth =  parseInt(window.screen.width);
-        var phoneScale = phoneWidth/640;
-        var ua = navigator.userAgent;
-        if (/Android (\d+\.\d+)/.test(ua)){
-            var version = parseFloat(RegExp.$1);
-            if(version>2.3){
-                document.write(‘<meta name="viewport" content="width=640, minimum-scale = ‘+phoneScale+‘, maximum-scale = ‘+phoneScale+‘, target-densitydpi=device-dpi">‘);
-            }else{
-                document.write(‘<meta name="viewport" content="width=640, target-densitydpi=device-dpi">‘);
-            }
-        } else {
-            document.write(‘<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">‘);
-        }
-    </script>
+    <!-- 适配手机屏幕 -->
+   <script type="text/javascript">
+       var phoneWidth =  parseInt(window.screen.width);
+       var phoneScale = phoneWidth/640;
+       var ua = navigator.userAgent;
+       if (/Android (\d+\.\d+)/.test(ua)){
+           var version = parseFloat(RegExp.$1);
+           if(version>2.3){
+               document.write(‘<meta name="viewport" content="width=640, minimum-scale = ‘+phoneScale+‘, maximum-scale = ‘+phoneScale+‘, target-densitydpi=device-dpi">‘);
+           }else{
+               document.write(‘<meta name="viewport" content="width=640, target-densitydpi=device-dpi">‘);
+           }
+       } else {
+           document.write(‘<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">‘);
+       }
+   </script>
 </head>
 <body>
 <div class="header">
 
-    <div class="headercon container clearfix">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- 导航部分 -->
+   <div class="headercon container clearfix">
+       <div class="row">
+           <div class="col-md-12">
+               <!-- 导航部分 -->
                 <a class="logo-t" href=""><img src="image/avatar.png" height="60%"/></a>
                 <ul class="nav-ul">
                     <li id="nav-index"><a href="">首页</a></li>
