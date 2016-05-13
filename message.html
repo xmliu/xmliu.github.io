@@ -3,16 +3,13 @@
     <Link Rel="SHORTCUT ICON" href="image/avatar.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>训明之家</title>
+    <title>留言</title>
     <style type="text/css">
         .footer{
         position:relative;
-        bottom:-10;
-        right:200;
-        left:-10;
-        background:#274e13;
-        height:100px;
         width:100%;
+        float:left;
+        bottom:0;
         }
         .header{
         position:absolute;top:0;
@@ -21,19 +18,10 @@
         height:60px;
         width:100%;
         }
-        .footer-nav{
-        float:right;
-        height:100%;
-        margin-right:100px;
-        }
-        .copyright{
-        float:left;
-        margin-left:100px;
-        position:absolute;bottom:0;
-        }
-        p{
-        color: #c5c5c5;
-        font-size:14;
+        .copyright p{
+        text-align:center;
+        color: grey;
+        font-size:13;
         }
         ul{list-style:none;}
         li{
@@ -54,11 +42,13 @@
         a:hover{text-decoration:underline;}
         .content{
         margin-top:100px;
-        margin-left:100px;
+        margin-left:50px;
+        margin-right:50px;
         }
-        .logo-t{width: 200px;height: 60px; line-height:60px; display: block;float:
+        .logo-t{height: 60px; line-height:60px; display: block;float:
         left;margin-left:20px;}
     </style>
+    <!-- 以下为百度站长统计脚本，统计报告进入后台查看 -->
     <script>
         var _hmt = _hmt || [];
         (function() {
@@ -67,6 +57,7 @@
           var s = document.getElementsByTagName("script")[0];
           s.parentNode.insertBefore(hm, s);
         })();
+
     </script>
 
 </head>
@@ -86,22 +77,6 @@
                     <li><a href="about.html" class="">关于</a></li>
                 </ul>
                 <!-- 导航部分 end -->
-
-                <!-- 搜索-下拉 -->
-                <div class="header_right" style="float:right;margin-right:100px;">
-                    <div class="search_start">
-                        <div class="search_cont">
-                            <form action="" method="get">
-                                <input type="hidden" name="kwtype" value="0"/>
-                                <input type="text" name="q" class="in_search" autocomplete="off"
-                                       value="搜索"/>
-                                <input type="submit" class="in_submit"/>
-                                <span class="glyphicon glyphicon-search icon-search"></span>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
 
             </div>
         </div>
@@ -132,35 +107,26 @@ var duoshuoQuery = {short_name:"xmliu"};
 		(document.getElementsByTagName('head')[0]
 		 || document.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
-	</script>
+
+    </script>
     <!-- 多说公共JS代码 end -->
     <br>
     <br>
 
 
 </div>
-<div class="footer">
-    <div class="container">
-        <div class="row clearfix">
-            <div class="col-md-12">
-                <div class="copyright">
+<footer class="footer">
 
-                    <p>本站文章仅用于学习交流，如有侵权，请告知删除</p>
 
-                    <p>Copyright 2011 - 2016 liuxunming.com All Rights Reversed.</p>
-                </div>
-                <div class="footer-nav">
-                    <ul class="clearfix">
+    <div class="copyright">
 
-                        <li><a href="" target="_blank"></a></li>
-                        <li>
-                            <a href="http://tongji.baidu.com/web/welcome/ico?s=6c1a23e42da4fdbc3e9ddb1a9339bee2" target="_blank"><img src="image/baiducount.gif"/> </a></li>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <p>本站文章仅用于学习交流，如有侵权，请告知删除</p>
+
+        <p>Copyright 2011 - 2016 liuxunming.com All Rights Reversed.<a href="http://tongji.baidu.com/web/welcome/ico?s=6c1a23e42da4fdbc3e9ddb1a9339bee2"
+                                                                       target="_blank"><img src="image/baiducount.gif"/> </a></p>
     </div>
-</div>
+
+
+</footer>
 </body>
 </html>
