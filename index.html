@@ -3,6 +3,9 @@
     <Link Rel="SHORTCUT ICON" href="image/website_logo.png">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bmobSocketIo.js"></script>
+    <script src="js/bmob.js"></script>
     <title>训明之家</title>
     <style type="text/css">
 
@@ -170,8 +173,32 @@
 </div>
 <div class="content">
 
-    <script charset="Shift_JIS"
-            src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
+    <div>     <script charset="Shift_JIS"
+                      src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script><div style="float:right"><input type="text" id="name" placeholder="来自哪里的朋友(come from?)">  <button name="点我试试" id="send">用力踩我(Click me)</button></div></div>
+    <script type="text/javascript">
+        function addVisitor(){
+             var Visit = Bmob.Object.extend("JSVisitBean");
+                var visitor = new Visit();
+                visitor.set("name", $("#name").val());
+                visitor.save(null, {
+                  success: function(object) {
+                   alert("踩我成功(very nice)")
+                  },
+                  error: function(model, error) {
+                    alert("踩我失败(try again)" + error)
+                  }
+                });
+        }
+
+        $("#send").click(function(){
+            addVisitor();
+        });
+
+        //服务器
+        BmobSocketIo.initialize("07b752a64abdf34127887ada169d9709");
+        Bmob.initialize("07b752a64abdf34127887ada169d9709", "b9860c827bc48a7f9400d2b07b760661");
+    </script>
+
     <br>
     <br>
     <dl class="list_dl">
