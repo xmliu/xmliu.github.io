@@ -1,8 +1,14 @@
 <html lang="zh-cn">
 <head>
-    <Link Rel="SHORTCUT ICON" href="image/avatar.png">
+    <Link Rel="SHORTCUT ICON" href="image/website_logo.png">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.banner.js"></script>
+
+    <script src="js/bmobSocketIo.js"></script>
+    <script src="js/bmob.js"></script>
     <title>训明之家</title>
     <style type="text/css">
 
@@ -13,8 +19,8 @@
         }
         .list_dl a{ text-decoration: none;}
         .list_dl{
-        width:100%;
-        height:auto;
+        width:40%;
+        height:25%;
         display:block;
         overflow:hidden;
         margin-bottom:8px;
@@ -28,9 +34,6 @@
         border-bottom-width: 2px;
         border-bottom-style: solid;
         border-bottom-color: #FF9933;
-        background-image: url(images/right_tit.gif);
-        background-repeat:repeat-x;
-        background-position: right top;
         }
         .list_dl dt b{float:left;
         width:240px;
@@ -116,6 +119,22 @@
         left;margin-left:20px;}
 
 
+        *{margin:0;padding:0;list-style-type:none;}
+        a,img{border:0;}
+        body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+
+        .banner{width:40%;overflow:hidden;height:40%;position:relative}
+        .banList{position:absolute;left:50%;margin-left:-960px;height:470px}
+        .banList li{height:470px;opacity:0;position:absolute;transform:scale(0);transition:transform
+        0.5s ease 0s, opacity 1.5s ease 0s;z-index:1;}
+        .banList li.active{opacity:1;transform:scale(1);z-index:2;}
+        .fomW{position:absolute;bottom:20px;left:50%;height:20px;z-index:9;width:1000px;margin-left:-500px}
+        .jsNav{text-align:center;}
+        .jsNav
+        a{display:inline-block;background:#fff;width:15px;height:15px;border-radius:50%;margin:0
+        5px;}
+        .jsNav a.current{background:#fc8f0f;cursor:pointer}
+
     </style>
     <!-- 以下为百度站长统计脚本，统计报告进入后台查看 -->
     <script>
@@ -127,10 +146,11 @@
           s.parentNode.insertBefore(hm, s);
         })();
 
+
     </script>
 
     <!-- 适配手机屏幕 -->
-   <script type="text/javascript">
+    <script type="text/javascript">
        var phoneWidth =  parseInt(window.screen.width);
        var phoneScale = phoneWidth/640;
        var ua = navigator.userAgent;
@@ -144,16 +164,17 @@
        } else {
            document.write(‘<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">‘);
        }
-   </script>
+
+    </script>
 </head>
 <body>
 <div class="header">
 
-   <div class="headercon container clearfix">
-       <div class="row">
-           <div class="col-md-12">
-               <!-- 导航部分 -->
-                <a class="logo-t" href=""><img src="image/avatar.png" height="60%"/></a>
+    <div class="headercon container clearfix">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- 导航部分 -->
+                <a class="logo-t" href=""><img src="image/website_logo_nav.png" height="60%"/></a>
                 <ul class="nav-ul">
                     <li id="nav-index"><a href="">首页</a></li>
                     <li id="nav-code"><a href="">代码</a></li>
@@ -170,32 +191,103 @@
 </div>
 <div class="content">
 
-    <script charset="Shift_JIS"
-            src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
+    <div>
+        <script charset="Shift_JIS"
+                src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
+        <div style="float:right"><input type="text" id="name" placeholder="来自哪里的朋友(come from?)">
+            <button name="点我试试" id="send">用力踩我(Click me)</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function addVisitor(){
+             var Visit = Bmob.Object.extend("JSVisitBean");
+                var visitor = new Visit();
+                visitor.set("name", $("#name").val());
+                visitor.save(null, {
+                  success: function(object) {
+                   alert("踩我成功(very nice)")
+                  },
+                  error: function(model, error) {
+                    alert("踩我失败(try again)" + error)
+                  }
+                });
+        }
+
+        $("#send").click(function(){
+            addVisitor();
+        });
+
+        //服务器
+        BmobSocketIo.initialize("07b752a64abdf34127887ada169d9709");
+        Bmob.initialize("07b752a64abdf34127887ada169d9709", "b9860c827bc48a7f9400d2b07b760661");
+
+    </script>
+
     <br>
+
+    <div class="banner">
+        <ul class="banList">
+            <li class="active"><a href="http://sc.chinaz.com/"><img src="image/img1.jpg"/></a></li>
+            <li><a href="http://sc.chinaz.com/"><img src="image/img2.jpg"/></a></li>
+            <li><a href="http://sc.chinaz.com/"><img src="image/img3.jpg"/></a></li>
+        </ul>
+        <div class="fomW">
+            <div class="jsNav">
+                <a href="javascript:;" class="trigger current"></a>
+                <a href="javascript:;" class="trigger"></a>
+                <a href="javascript:;" class="trigger"></a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function(){
+            $(".banner").swBanner();
+        });
+    </script>
     <br>
+
+
     <dl class="list_dl">
         <dt><b>推荐文章</b><a href="#" class="more">>>更多</a></dt>
         <dd>
             <ul>
-                <li><span>16-05-14</span><a href="#" class="link1">[测试文章]</a> Android Studio多渠道批量打包及代码混淆</li>
-                <li><span>16-04-27</span><a href="#" class="link1">[测试文章]</a> Android中通过Exifinterface读取图片地理位置信息</li>
-                <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a> RecyclerView的使用心得记录</li>
-                <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a> Android省市区滚轮默认显示已选择的项</li>
-                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据</li>
+                <li><span>16-05-14</span><a href="#" class="link1">[测试文章]</a> Android
+                    Studio多渠道批量打包及代码混淆
+                </li>
+                <li><span>16-04-27</span><a href="#" class="link1">[测试文章]</a>
+                    Android中通过Exifinterface读取图片地理位置信息
+                </li>
+                <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a> RecyclerView的使用心得记录
+                </li>
+                <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a> Android省市区滚轮默认显示已选择的项
+                </li>
+                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                </li>
+                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                </li>
+                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                </li>
+                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                </li>
+                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                </li>
             </ul>
         </dd>
     </dl>
     <br>
     <br>
     <li style="float:left">
-        <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?u=2aE0&d=decH5PwlyGeWGwud8Zke-95l1BupBAoU-b77gZ1vUhU"></script>
+        <script type="text/javascript" id="clustrmaps"
+                src="//cdn.clustrmaps.com/map_v2.js?u=2aE0&d=decH5PwlyGeWGwud8Zke-95l1BupBAoU-b77gZ1vUhU"></script>
     </li>
     <br>
     <br>
     <br>
     <br>
     <br>
+
+
     <br>
     <br>
     <br>
@@ -227,11 +319,29 @@
 
         <p>本站文章仅用于学习交流，如有侵权，请告知删除</p>
 
-        <p>Copyright 2011 - 2016 liuxunming.com All Rights Reversed.<a href="http://tongji.baidu.com/web/welcome/ico?s=6c1a23e42da4fdbc3e9ddb1a9339bee2"
-                                                                       target="_blank"><img src="image/baiducount.gif"/> </a></p>
+        <p>Copyright 2011 - 2016 liuxunming.com All Rights Reversed.<a
+                href="http://tongji.baidu.com/web/welcome/ico?s=6c1a23e42da4fdbc3e9ddb1a9339bee2"
+                target="_blank"><img src="image/baiducount.gif"/> </a></p>
     </div>
 
 
 </footer>
+<!-- 百度站长自动推送代码 http://zhanzhang.baidu.com/linksubmit/index-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+</script>
+
 </body>
 </html>

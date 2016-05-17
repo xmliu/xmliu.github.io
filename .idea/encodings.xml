@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/image/16.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/image/4.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/image/6.jpg" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/bmob.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/js/bmobSocketIo.js" charset="UTF-8" />
+  </component>
+</project>
