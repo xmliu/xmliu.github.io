@@ -12,6 +12,141 @@
     <title>训明之家</title>
     <style type="text/css">
 
+
+
+        .footer{
+        position:relative;
+        width:100%;
+        float:left;
+        bottom:0;
+        }
+        .header{
+        position:absolute;top:0;
+        left:0;
+        background:#274e13;
+        height:60px;
+        width:100%;
+        }
+        .copyright p{
+        text-align:center;
+        color: grey;
+        font-size:13;
+        }
+        .nav-ul{
+        margin-left:100px;
+        color: #c5c5c5;
+        }
+        .nav-ul li{
+        margin-left:100px;
+        float:left;
+        }
+        .nav-ul a{
+        text-decoration: none;
+        color:white;
+        }
+        .nav-ul a:hover{text-decoration:underline;}
+        .content{
+        margin-top:100px;
+        margin-left:50px;
+        margin-right:50px;
+        }
+        .logo-t{height: 60px; line-height:60px; display: block;float:
+        left;margin-left:20px;}
+
+
+        .flexslider {
+        margin-right:20px;
+        position: relative;
+        width: 35%;
+        height: 30%;
+        overflow: hidden;
+        zoom: 1;
+        }
+
+        .flexslider .slides li {
+        width: 100%;
+        height: 100%;
+        }
+
+        .flex-direction-nav a {
+        width: 70px;
+        height: 70px;
+        line-height: 99em;
+        overflow: hidden;
+        margin: -35px 0 0;
+        display: block;
+        background: url(image/ad_ctr.png) no-repeat;
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        -webkit-transition: all .3s ease;
+        border-radius: 35px;
+        }
+
+        .flex-direction-nav .flex-next {
+        background-position: 0 -70px;
+        right: 0;
+        }
+
+        .flex-direction-nav .flex-prev {
+        left: 0;
+        }
+
+        .flexslider:hover .flex-next {
+        opacity: 0.8;
+        filter: alpha(opacity=25);
+        }
+
+        .flexslider:hover .flex-prev {
+        opacity: 0.8;
+        filter: alpha(opacity=25);
+        }
+
+        .flexslider:hover .flex-next:hover,
+        .flexslider:hover .flex-prev:hover {
+        opacity: 1;
+        filter: alpha(opacity=50);
+        }
+
+        .flex-control-nav {
+        width: 100%;
+        position: absolute;
+        bottom: 10px;
+        text-align: center;
+        }
+
+        .flex-control-nav li {
+        margin: 0 2px;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+        }
+
+        .flex-control-paging li a {
+        background: url(image/dot.png) no-repeat 0 -16px;
+        display: block;
+        height: 16px;
+        overflow: hidden;
+        text-indent: -99em;
+        width: 16px;
+        cursor: pointer;
+        }
+
+        .flex-control-paging li a.flex-active,
+        .flex-control-paging li.active a {
+        background-position: 0 0;
+        }
+
+        .flexslider .slides a img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        }
+
+
         .list_dl ul,li,ol,dl,dt,dd{
         padding:0px;
         margin:0px;
@@ -19,10 +154,9 @@
         }
         .list_dl a{ text-decoration: none;}
         .list_dl{
-        width:40%;
-        height:25%;
-        display:block;
-        overflow:hidden;
+        float:right;
+        width:35%;
+        height:30%;
         margin-bottom:8px;
         font-size:10pt;
         }
@@ -79,61 +213,15 @@
         margin-right:7px;
         }
 
-        .footer{
-        position:relative;
-        width:100%;
-        float:left;
-        bottom:0;
-        }
-        .header{
-        position:absolute;top:0;
-        left:0;
-        background:#274e13;
-        height:60px;
-        width:100%;
-        }
-        .copyright p{
-        text-align:center;
-        color: grey;
-        font-size:13;
-        }
-        .nav-ul{
-        margin-left:100px;
-        color: #c5c5c5;
-        }
-        .nav-ul li{
-        margin-left:100px;
-        float:left;
-        }
-        .nav-ul a{
-        text-decoration: none;
-        color:white;
-        }
-        .nav-ul a:hover{text-decoration:underline;}
-        .content{
-        margin-top:100px;
-        margin-left:50px;
-        margin-right:50px;
-        }
-        .logo-t{height: 60px; line-height:60px; display: block;float:
-        left;margin-left:20px;}
 
 
-        *{margin:0;padding:0;list-style-type:none;}
-        a,img{border:0;}
-        body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+        .rightme{
+        padding:0px;
+        margin:0px;
+        list-style-type: none;
+        float:right;
+        }
 
-        .banner{width:40%;overflow:hidden;height:40%;position:relative}
-        .banList{position:absolute;left:50%;margin-left:-960px;height:470px}
-        .banList li{height:470px;opacity:0;position:absolute;transform:scale(0);transition:transform
-        0.5s ease 0s, opacity 1.5s ease 0s;z-index:1;}
-        .banList li.active{opacity:1;transform:scale(1);z-index:2;}
-        .fomW{position:absolute;bottom:20px;left:50%;height:20px;z-index:9;width:1000px;margin-left:-500px}
-        .jsNav{text-align:center;}
-        .jsNav
-        a{display:inline-block;background:#fff;width:15px;height:15px;border-radius:50%;margin:0
-        5px;}
-        .jsNav a.current{background:#fc8f0f;cursor:pointer}
 
     </style>
     <!-- 以下为百度站长统计脚本，统计报告进入后台查看 -->
@@ -145,6 +233,7 @@
           var s = document.getElementsByTagName("script")[0];
           s.parentNode.insertBefore(hm, s);
         })();
+
 
 
     </script>
@@ -164,6 +253,7 @@
        } else {
            document.write(‘<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">‘);
        }
+
 
     </script>
 </head>
@@ -191,10 +281,10 @@
 </div>
 <div class="content">
 
-    <div>
+    <div class="topclock">
         <script charset="Shift_JIS"
                 src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
-        <div style="float:right"><input type="text" id="name" placeholder="来自哪里的朋友(come from?)">
+        <div style="float:right"><input type="text" id="name" placeholder="来自哪里(come from?)">
             <button name="点我试试" id="send">用力踩我(Click me)</button>
         </div>
     </div>
@@ -221,32 +311,69 @@
         BmobSocketIo.initialize("07b752a64abdf34127887ada169d9709");
         Bmob.initialize("07b752a64abdf34127887ada169d9709", "b9860c827bc48a7f9400d2b07b760661");
 
+
     </script>
 
     <br>
 
-    <div class="banner">
-        <ul class="banList">
-            <li class="active"><a href="http://sc.chinaz.com/"><img src="image/img1.jpg"/></a></li>
-            <li><a href="http://sc.chinaz.com/"><img src="image/img2.jpg"/></a></li>
-            <li><a href="http://sc.chinaz.com/"><img src="image/img3.jpg"/></a></li>
+    <!-- 轮播广告 -->
+    <div id="banner_tabs" class="flexslider">
+        <ul class="slides">
+            <li>
+                <a title="" href="#">
+                    <img width="35%" height="200" alt=""
+                         style="background: url(image/banner1.jpg) no-repeat center;"
+                         src="image/alpha.png">
+                </a>
+            </li>
+            <li>
+                <a title="" href="#">
+                    <img width="35%" height="200" alt=""
+                         style="background: url(image/banner2.jpg) no-repeat center;"
+                         src="image/alpha.png">
+                </a>
+            </li>
+            <li>
+                <a title="" href="#">
+                    <img width="35%" height="200" alt=""
+                         style="background: url(image/banner4.jpg) no-repeat center;"
+                         src="image/alpha.png">
+                </a>
+            </li>
         </ul>
-        <div class="fomW">
-            <div class="jsNav">
-                <a href="javascript:;" class="trigger current"></a>
-                <a href="javascript:;" class="trigger"></a>
-                <a href="javascript:;" class="trigger"></a>
-            </div>
-        </div>
+        <ul class="flex-direction-nav">
+            <li><a class="flex-prev" href="javascript:;">Previous</a></li>
+            <li><a class="flex-next" href="javascript:;">Next</a></li>
+        </ul>
+        <ol id="bannerCtrl" class="flex-control-nav flex-control-paging">
+            <li><a>1</a></li>
+            <li><a>2</a></li>
+            <li><a>2</a></li>
+        </ol>
     </div>
-
+    <script src="js/slider.js"></script>
     <script type="text/javascript">
-        $(function(){
-            $(".banner").swBanner();
-        });
+        $(function() {
+            var bannerSlider = new Slider($('#banner_tabs'), {
+                time: 5000,
+                delay: 400,
+                event: 'hover',
+                auto: true,
+                mode: 'fade',
+                controller: $('#bannerCtrl'),
+                activeControllerCls: 'active'
+            });
+            $('#banner_tabs .flex-prev').click(function() {
+                bannerSlider.prev()
+            });
+            $('#banner_tabs .flex-next').click(function() {
+                bannerSlider.next()
+            });
+        })
     </script>
-    <br>
 
+
+    <!-- 推荐文章 -->
 
     <dl class="list_dl">
         <dt><b>推荐文章</b><a href="#" class="more">>>更多</a></dt>
@@ -266,21 +393,25 @@
                 </li>
                 <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
                 </li>
-                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a> Android省市区滚轮默认显示已选择的项
                 </li>
-                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
-                </li>
-                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a> RecyclerView的使用心得记录
                 </li>
             </ul>
         </dd>
     </dl>
-    <br>
-    <br>
-    <li style="float:left">
-        <script type="text/javascript" id="clustrmaps"
-                src="//cdn.clustrmaps.com/map_v2.js?u=2aE0&d=decH5PwlyGeWGwud8Zke-95l1BupBAoU-b77gZ1vUhU"></script>
-    </li>
+
+
+    <div class="rightme">
+        <a href=""><img src="image/avatar.png" width="150px"/></a><br>
+        刘训明
+        <li>
+            <script type="text/javascript" id="clustrmaps"
+                    src="//cdn.clustrmaps.com/map_v2.js?u=2aE0&d=decH5PwlyGeWGwud8Zke-95l1BupBAoU-b77gZ1vUhU"></script>
+        </li>
+
+    </div>
+
     <br>
     <br>
     <br>
@@ -340,6 +471,7 @@
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
+
 
 </script>
 
