@@ -3,12 +3,17 @@
     <Link Rel="SHORTCUT ICON" href="image/website_logo.png">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <!--渐隐样式-->
     <link rel="stylesheet" href="css/luara.css"/>
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
+    <!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.simplesidebar.js"></script>
     <script src="js/bmobSocketIo.js"></script>
     <script src="js/bmob.js"></script>
     <title>训明之家</title>
@@ -51,8 +56,7 @@
         margin-left:50px;
         margin-right:50px;
         }
-        .logo-t{height: 60px; line-height:60px; display: block;float:
-        left;margin-left:20px;}
+        .logo-t{height: 40px;float:left;margin:10px;}
 
 
         .list_dl ul,li,ol,dl,dt,dd{
@@ -169,27 +173,55 @@
     </script>
 </head>
 <body>
-<div class="header">
-
-    <div class="headercon container clearfix">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- 导航部分 -->
-                <a class="logo-t" href=""><img src="image/website_logo_nav.png" height="60%"/></a>
-                <ul class="nav-ul">
-                    <li id="nav-index"><a href="">首页</a></li>
-                    <li id="nav-code"><a href="">代码</a></li>
-                    <li id="nav-ask"><a href="message.html">留言</a></li>
-                    <li id="nav-tag"><a href="music.html" class="">音乐</a></li>
-                    <li><a href="about.html" class="">关于</a></li>
-                </ul>
-                <!-- 导航部分 end -->
-
-            </div>
-        </div>
-    </div>
-
+<div class="toolbar">
+    <div id="open-sb" class="menu-button menu-left"></div>
+    <a class="logo-t" href=""><img src="image/website_logo_nav.png" height="90%"/></a>
 </div>
+<section class="sidebar">
+    <div class="subNav"><h5>训明之家</h5></div>
+    <hr />
+    <div class="subNav"><h6> <a href="#">首页</a> </h6></div>
+    <div class="subNav"><h6> <a href="#">代码</a> </h6></div>
+    <div class="subNav"><h6> <a href="message.html">留言</a> </h6></div>
+    <div class="subNav"><h6> <a href="music.html">音乐</a> </h6></div>
+    <div class="subNav"><h6> <a href="about.html">关于</a> </h6></div>
+    <ul class="navContent">
+        <li><a href="#">微信公众号</a></li>
+        <li><a href="#">个人网站</a></li>
+        <li><a href="#">App</a></li>
+        <li><a href="#">其他博客</a></li>
+    </ul>
+</section>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+	$( '.sidebar' ).simpleSidebar({
+		settings: {
+			opener: '#open-sb',
+			wrapper: '.wrapper',
+			animation: {
+				duration: 500,
+				easing: 'easeOutQuint'
+			}
+		},
+		sidebar: {
+			align: 'left',
+			width: 200,
+			closingLinks: 'a',
+		}
+	});
+});
+</script>
+
+<script type="text/javascript">
+$(function(){
+$(".subNav").click(function(){
+			// 修改数字控制速度， slideUp(500)控制卷起速度
+			$(this).next(".navContent").slideToggle(500);
+	})
+})
+</script>
+
 <div class="content">
 
     <div class="topclock">
