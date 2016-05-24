@@ -7,6 +7,6 @@
 2.when we input xmliu.github.io,why it redirect to liuxunming.site? i know liuxunming.site already close.and in my project,CNAME also be liuxunming.com
 
 # ref see:
-1.index menu style:ref--><http://www.mycodes.net/152/8391.htm>;like <https://www.starbucks.com.cn/>
-2.article style:ref--><https://www.douban.com/note/429860412/>
-3.banner style:ref--><http://sc.chinaz.com/jiaoben/140828174820.htm>
+1.index menu style:ref--><http://www.mycodes.net/152/8391.htm>;like <https://www.starbucks.com.cn/>.<br>
+2.article style:ref--><https://www.douban.com/note/429860412/>.<br>
+3.banner style:ref--><http://sc.chinaz.com/jiaoben/140828174820.htm>.<br>
