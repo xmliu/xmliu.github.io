@@ -3,19 +3,17 @@
     <Link Rel="SHORTCUT ICON" href="image/website_logo.png">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <!--渐隐样式-->
-    <link rel="stylesheet" href="css/luara.css"/>
-    <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
-    <!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/jquery.simplesidebar.js"></script>
     <script src="js/bmobSocketIo.js"></script>
     <script src="js/bmob.js"></script>
+
     <title>训明之家</title>
     <style type="text/css">
 
@@ -65,7 +63,7 @@
         .list_dl a{ text-decoration: none;}
         .list_dl{
         float:left;
-        width:70%;
+        width:80%;
         height:30%;
         margin-bottom:8px;
         margin-left:20px;
@@ -128,7 +126,7 @@
 
         .right{
         padding:0px;
-        width:25%;
+        width:15%;
         margin:0px;
         list-style-type: none;
         float:left;
@@ -147,15 +145,21 @@
           s.parentNode.insertBefore(hm, s);
         })();
 
+
+
     </script>
 
 </head>
 <body>
 <div class="toolbar">
     <div id="open-sb" class="menu-button menu-left"></div>
-    <div style="text-align:center"><a href=""><img src="image/website_logo_nav.png" width="40" height="40"/></a><div style="float:right;margin-right:20;">
-        <input type="text" id="name" placeholder="来自哪里(come from?)">
-        <button name="点我试试" id="send">用力踩我(Click me)</button></div></div>
+    <div style="text-align:center"><a href=""><img src="image/website_logo_nav.png" width="40"
+                                                   height="40"/></a>
+        <div style="float:right;margin-right:20;">
+            <input type="text" id="name" placeholder="来自哪里(come from?)">
+            <button name="点我试试" id="send">用力踩我(Click me)</button>
+        </div>
+    </div>
 
     <script type="text/javascript">
             function addVisitor(){
@@ -182,16 +186,18 @@
 
 
 
-        </script>
+
+
+    </script>
 </div>
 <section class="sidebar">
     <div class="subNav"><h5>训明之家</h5></div>
-    <hr />
-    <div class="subNav"><h6> <a href="#">首页</a> </h6></div>
-    <div class="subNav"><h6> <a href="#">代码</a> </h6></div>
-    <div class="subNav"><h6> <a href="message.html">留言</a> </h6></div>
-    <div class="subNav"><h6> <a href="music.html">音乐</a> </h6></div>
-    <div class="subNav"><h6> <a href="about.html">关于</a> </h6></div>
+    <hr/>
+    <div class="subNav"><h6><a href="#">首页</a></h6></div>
+    <div class="subNav"><h6><a href="#">代码</a></h6></div>
+    <div class="subNav"><h6><a href="message.html">留言</a></h6></div>
+    <div class="subNav"><h6><a href="music.html">音乐</a></h6></div>
+    <div class="subNav"><h6><a href="about.html">关于</a></h6></div>
     <ul class="navContent">
         <li><a href="#">微信公众号</a></li>
         <li><a href="#">个人网站</a></li>
@@ -218,6 +224,8 @@ $( document ).ready(function() {
 		}
 	});
 });
+
+
 </script>
 
 <script type="text/javascript">
@@ -227,13 +235,17 @@ $(".subNav").click(function(){
 			$(this).next(".navContent").slideToggle(500);
 	})
 })
+
+
 </script>
 
 <div class="content">
 
     <div class="top">
         <div style="position:relative;height:97%;width:100%;">
-           <a href="#"><img style="position:absolute;left:0px;top:0px;width:100%;height:100%;z-Index:-1;" src="image/main_bg.jpg" /></a>
+            <a href="#"><img
+                    style="position:absolute;left:0px;top:0px;width:100%;height:100%;z-Index:-1;"
+                    src="image/main_bg.jpg"/></a>
 
         </div>
 
@@ -243,55 +255,65 @@ $(".subNav").click(function(){
     <br>
 
 
-    <div class="left">
+    <!-- 推荐文章 -->
 
+    <dl class="list_dl">
+        <dt><b>推荐文章</b><a href="http://blog.csdn.net/diyangxia" class="more">>>更多</a></dt>
+        <dd>
+            <ul>
+                <li><span>16-05-14</span><a href="#" class="link1">[测试文章]</a>
+                    Studio多渠道批量打包及代码混淆
+                </li>
+                <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a>
+                    RecyclerView的使用心得记录
+                </li>
+                <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a>
+                    Android省市区滚轮默认显示已选择的项
+                </li>
+                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a>
+                    Excel中根据XML映射导出XML数据
+                </li>
+                <li><span>16-05-14</span><a href="#" class="link1">[测试文章]</a>
+                    Studio多渠道批量打包及代码混淆
+                </li>
+                <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a>
+                    RecyclerView的使用心得记录
+                </li>
+                <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a>
+                    Android省市区滚轮默认显示已选择的项
+                </li>
+                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a>
+                    Excel中根据XML映射导出XML数据
+                </li>
+                <li><span>16-05-14</span><a href="#" class="link1">[测试文章]</a>
+                    Studio多渠道批量打包及代码混淆
+                </li>
+                <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a>
+                    RecyclerView的使用心得记录
+                </li>
+                <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a>
+                    Android省市区滚轮默认显示已选择的项
+                </li>
+                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a>
+                    Excel中根据XML映射导出XML数据
+                </li>
+            </ul>
+        </dd>
+    </dl>
 
-        <!-- 推荐文章 -->
-
-        <dl class="list_dl">
-            <dt><b>推荐文章</b><a href="#" class="more">>>更多</a></dt>
-            <dd>
-                <ul>
-                    <li><span>16-05-14</span><a href="#" class="link1">[测试文章]</a> Android
-                        Studio多渠道批量打包及代码混淆
-                    </li>
-                    <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a>
-                        RecyclerView的使用心得记录
-                    </li>
-                    <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a>
-                        Android省市区滚轮默认显示已选择的项
-                    </li>
-                    <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a>
-                        Excel中根据XML映射导出XML数据
-                    </li>
-                    <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a>
-                        Excel中根据XML映射导出XML数据
-                    </li>
-                    <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a>
-                        Android省市区滚轮默认显示已选择的项
-                    </li>
-                    <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a>
-                        RecyclerView的使用心得记录
-                    </li>
-                </ul>
-            </dd>
-        </dl>
-
-
-
-    </div>
 
     <div class="right">
 
-
-        <div style="width:100;">
-            <script type="text/javascript" id="clustrmaps"
-                    src="//cdn.clustrmaps.com/map_v2.js?u=2aE0&d=decH5PwlyGeWGwud8Zke-95l1BupBAoU-b77gZ1vUhU"></script>
+        <div style="width:100;margin:0 auto;text-align:center;"><a href=""><img src="image/avatar.png" width="100px"/></a><br>
         </div>
+        <div style="width:100;font-size:12;text-align:center;margin:0 auto;">刘训明</div>
+        <br>
+        <script type="text/javascript" id="clustrmaps"
+                src="//cdn.clustrmaps.com/map_v2.js?u=2aE0&d=decH5PwlyGeWGwud8Zke-95l1BupBAoU-b77gZ1vUhU"></script>
+        <br>
         <script charset="Shift_JIS"
                 src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
-        <div style="width:100;margin-top:10;"><a href="" ><img src="image/avatar.png" width="100px"/></a><br></div>
-        <div style="width:100;font-size:12;text-align:center;margin-top:5;">刘训明</div>
+
     </div>
 
     <br>
@@ -353,6 +375,8 @@ $(".subNav").click(function(){
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
+
+
 
 
 
