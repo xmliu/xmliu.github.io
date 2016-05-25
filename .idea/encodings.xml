@@ -3,13 +3,9 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/css/luara.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/css/style.css" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/image/ad_ctr.png" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/image/alpha.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/image/avatar.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/image/banner1.jpg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/image/banner2.jpg" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/image/banner4.jpg" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/image/dot.png" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/bmob.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/bmobSocketIo.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/js/jquery.luara.0.0.1.min.js" charset="UTF-8" />

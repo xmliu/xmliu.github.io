@@ -52,11 +52,9 @@
         }
         .nav-ul a:hover{text-decoration:underline;}
         .content{
-        margin-top:100px;
-        margin-left:50px;
-        margin-right:50px;
+        margin-top:68;
         }
-        .logo-t{height: 40px;float:left;margin:10px;}
+        .logo-t{height:40;float:left;margin:10;}
 
 
         .list_dl ul,li,ol,dl,dt,dd{
@@ -67,9 +65,10 @@
         .list_dl a{ text-decoration: none;}
         .list_dl{
         float:left;
-        width:35%;
+        width:70%;
         height:30%;
         margin-bottom:8px;
+        margin-left:20px;
         margin-right:20px;
         font-size:10pt;
         }
@@ -129,10 +128,11 @@
 
         .right{
         padding:0px;
-        width:200px;
+        width:25%;
         margin:0px;
         list-style-type: none;
         float:left;
+        text-align:center;
         }
 
 
@@ -147,35 +147,42 @@
           s.parentNode.insertBefore(hm, s);
         })();
 
-
-
-
     </script>
 
-    <!-- 适配手机屏幕 -->
-    <script type="text/javascript">
-       var phoneWidth =  parseInt(window.screen.width);
-       var phoneScale = phoneWidth/640;
-       var ua = navigator.userAgent;
-       if (/Android (\d+\.\d+)/.test(ua)){
-           var version = parseFloat(RegExp.$1);
-           if(version>2.3){
-               document.write(‘<meta name="viewport" content="width=640, minimum-scale = ‘+phoneScale+‘, maximum-scale = ‘+phoneScale+‘, target-densitydpi=device-dpi">‘);
-           }else{
-               document.write(‘<meta name="viewport" content="width=640, target-densitydpi=device-dpi">‘);
-           }
-       } else {
-           document.write(‘<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">‘);
-       }
-
-
-
-    </script>
 </head>
 <body>
 <div class="toolbar">
     <div id="open-sb" class="menu-button menu-left"></div>
-    <a class="logo-t" href=""><img src="image/website_logo_nav.png" height="90%"/></a>
+    <div style="text-align:center"><a href=""><img src="image/website_logo_nav.png" width="40" height="40"/></a><div style="float:right;margin-right:20;">
+        <input type="text" id="name" placeholder="来自哪里(come from?)">
+        <button name="点我试试" id="send">用力踩我(Click me)</button></div></div>
+
+    <script type="text/javascript">
+            function addVisitor(){
+                 var Visit = Bmob.Object.extend("JSVisitBean");
+                    var visitor = new Visit();
+                    visitor.set("name", $("#name").val());
+                    visitor.save(null, {
+                      success: function(object) {
+                       alert("踩我成功(very nice)")
+                      },
+                      error: function(model, error) {
+                        alert("踩我失败(try again)" + error)
+                      }
+                    });
+            }
+
+            $("#send").click(function(){
+                addVisitor();
+            });
+
+            //服务器
+            BmobSocketIo.initialize("07b752a64abdf34127887ada169d9709");
+            Bmob.initialize("07b752a64abdf34127887ada169d9709", "b9860c827bc48a7f9400d2b07b760661");
+
+
+
+        </script>
 </div>
 <section class="sidebar">
     <div class="subNav"><h5>训明之家</h5></div>
@@ -224,68 +231,20 @@ $(".subNav").click(function(){
 
 <div class="content">
 
-    <div class="topclock">
+    <div class="top">
+        <div style="position:relative;height:97%;width:100%;">
+           <a href="#"><img style="position:absolute;left:0px;top:0px;width:100%;height:100%;z-Index:-1;" src="image/main_bg.jpg" /></a>
 
-        <div style="float:right"><input type="text" id="name" placeholder="来自哪里(come from?)">
-            <button name="点我试试" id="send">用力踩我(Click me)</button>
         </div>
 
-        <script type="text/javascript">
-            function addVisitor(){
-                 var Visit = Bmob.Object.extend("JSVisitBean");
-                    var visitor = new Visit();
-                    visitor.set("name", $("#name").val());
-                    visitor.save(null, {
-                      success: function(object) {
-                       alert("踩我成功(very nice)")
-                      },
-                      error: function(model, error) {
-                        alert("踩我失败(try again)" + error)
-                      }
-                    });
-            }
 
-            $("#send").click(function(){
-                addVisitor();
-            });
-
-            //服务器
-            BmobSocketIo.initialize("07b752a64abdf34127887ada169d9709");
-            Bmob.initialize("07b752a64abdf34127887ada169d9709", "b9860c827bc48a7f9400d2b07b760661");
-
-
-
-        </script>
     </div>
     <br>
     <br>
 
+
     <div class="left">
-        <!-- 轮播广告 -->
-        <!--Luara js文件-->
-        <script src="js/jquery.luara.0.0.1.min.js"></script>
-        <!--Luara图片切换骨架begin-->
-        <div class="example">
-            <ul>
-                <li><img src="image/banner1.jpg" alt="1"/></li>
-                <li><img src="image/banner2.jpg" alt="2"/></li>
-                <li><img src="image/banner3.jpg" alt="3"/></li>
-            </ul>
-            <ol>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ol>
-        </div>
-        <!--Luara图片切换骨架end-->
-        <script>
-    $(function(){
-        <!--调用Luara示例-->
-        $(".example").luara({width:"500",height:"280",interval:6000,selected:"seleted"});
 
-    });
-
-        </script>
 
         <!-- 推荐文章 -->
 
@@ -323,8 +282,6 @@ $(".subNav").click(function(){
     </div>
 
     <div class="right">
-
-
 
 
         <div style="width:100;">

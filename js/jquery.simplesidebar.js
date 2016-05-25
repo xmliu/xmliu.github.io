@@ -28,7 +28,7 @@
 				mask: {
 					style: {
 						backgroundColor: 'black',
-						opacity: 0.5,
+						opacity: 0.4,
 						filter: 'Alpha(opacity=50)' //IE8 and earlier
 					}
 				}
@@ -185,6 +185,7 @@
 			
 			$sidebar.on( 'click', $links, animateToLeft );
 		} else {
+		// sidebar 在左边，此else代码不执行
 			$sidebar.css({
 				position: 'fixed',
 				top: 0,
