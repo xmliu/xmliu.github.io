@@ -3,14 +3,57 @@
     <Link Rel="SHORTCUT ICON" href="image/website_logo.png">
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery.banner.js"></script>
-
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.simplesidebar.js"></script>
     <script src="js/bmobSocketIo.js"></script>
     <script src="js/bmob.js"></script>
+
     <title>训明之家</title>
     <style type="text/css">
+
+
+        .footer{
+        position:relative;
+        width:100%;
+        float:left;
+        bottom:0;
+        }
+        .header{
+        position:absolute;top:0;
+        left:0;
+        background:#274e13;
+        height:60px;
+        width:100%;
+        }
+        .copyright p{
+        text-align:center;
+        color: grey;
+        font-size:13;
+        }
+        .nav-ul{
+        margin-left:100px;
+        color: #c5c5c5;
+        }
+        .nav-ul li{
+        margin-left:100px;
+        float:left;
+        }
+        .nav-ul a{
+        text-decoration: none;
+        color:white;
+        }
+        .nav-ul a:hover{text-decoration:underline;}
+        .content{
+        margin-top:68;
+        }
+        .logo-t{height:40;float:left;margin:10;}
+
 
         .list_dl ul,li,ol,dl,dt,dd{
         padding:0px;
@@ -19,11 +62,12 @@
         }
         .list_dl a{ text-decoration: none;}
         .list_dl{
-        width:40%;
-        height:25%;
-        display:block;
-        overflow:hidden;
+        float:left;
+        width:80%;
+        height:30%;
         margin-bottom:8px;
+        margin-left:20px;
+        margin-right:20px;
         font-size:10pt;
         }
         .list_dl dt{
@@ -79,61 +123,16 @@
         margin-right:7px;
         }
 
-        .footer{
-        position:relative;
-        width:100%;
+
+        .right{
+        padding:0px;
+        width:15%;
+        margin:0px;
+        list-style-type: none;
         float:left;
-        bottom:0;
-        }
-        .header{
-        position:absolute;top:0;
-        left:0;
-        background:#274e13;
-        height:60px;
-        width:100%;
-        }
-        .copyright p{
         text-align:center;
-        color: grey;
-        font-size:13;
         }
-        .nav-ul{
-        margin-left:100px;
-        color: #c5c5c5;
-        }
-        .nav-ul li{
-        margin-left:100px;
-        float:left;
-        }
-        .nav-ul a{
-        text-decoration: none;
-        color:white;
-        }
-        .nav-ul a:hover{text-decoration:underline;}
-        .content{
-        margin-top:100px;
-        margin-left:50px;
-        margin-right:50px;
-        }
-        .logo-t{height: 60px; line-height:60px; display: block;float:
-        left;margin-left:20px;}
 
-
-        *{margin:0;padding:0;list-style-type:none;}
-        a,img{border:0;}
-        body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
-
-        .banner{width:40%;overflow:hidden;height:40%;position:relative}
-        .banList{position:absolute;left:50%;margin-left:-960px;height:470px}
-        .banList li{height:470px;opacity:0;position:absolute;transform:scale(0);transition:transform
-        0.5s ease 0s, opacity 1.5s ease 0s;z-index:1;}
-        .banList li.active{opacity:1;transform:scale(1);z-index:2;}
-        .fomW{position:absolute;bottom:20px;left:50%;height:20px;z-index:9;width:1000px;margin-left:-500px}
-        .jsNav{text-align:center;}
-        .jsNav
-        a{display:inline-block;background:#fff;width:15px;height:15px;border-radius:50%;margin:0
-        5px;}
-        .jsNav a.current{background:#fc8f0f;cursor:pointer}
 
     </style>
     <!-- 以下为百度站长统计脚本，统计报告进入后台查看 -->
@@ -147,140 +146,187 @@
         })();
 
 
-    </script>
 
-    <!-- 适配手机屏幕 -->
-    <script type="text/javascript">
-       var phoneWidth =  parseInt(window.screen.width);
-       var phoneScale = phoneWidth/640;
-       var ua = navigator.userAgent;
-       if (/Android (\d+\.\d+)/.test(ua)){
-           var version = parseFloat(RegExp.$1);
-           if(version>2.3){
-               document.write(‘<meta name="viewport" content="width=640, minimum-scale = ‘+phoneScale+‘, maximum-scale = ‘+phoneScale+‘, target-densitydpi=device-dpi">‘);
-           }else{
-               document.write(‘<meta name="viewport" content="width=640, target-densitydpi=device-dpi">‘);
-           }
-       } else {
-           document.write(‘<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">‘);
-       }
 
     </script>
+
 </head>
 <body>
-<div class="header">
+<div class="toolbar">
+    <div id="open-sb" class="menu-button menu-left"></div>
 
-    <div class="headercon container clearfix">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- 导航部分 -->
-                <a class="logo-t" href=""><img src="image/website_logo_nav.png" height="60%"/></a>
-                <ul class="nav-ul">
-                    <li id="nav-index"><a href="">首页</a></li>
-                    <li id="nav-code"><a href="">代码</a></li>
-                    <li id="nav-ask"><a href="message.html">留言</a></li>
-                    <li id="nav-tag"><a href="music.html" class="">音乐</a></li>
-                    <li><a href="about.html" class="">关于</a></li>
-                </ul>
-                <!-- 导航部分 end -->
+    <div style="text-align:center">
+        <a href=""><img src="image/website_logo_nav.png" width="40"
+                                                   height="40"/></a>
 
-            </div>
-        </div>
-    </div>
-
-</div>
-<div class="content">
-
-    <div>
-        <script charset="Shift_JIS"
-                src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
-        <div style="float:right"><input type="text" id="name" placeholder="来自哪里的朋友(come from?)">
+        <div style="float:right;margin-right:20;">
+            <input type="text" id="name" placeholder="来自哪里(come from?)">
             <button name="点我试试" id="send">用力踩我(Click me)</button>
         </div>
-    </div>
-    <script type="text/javascript">
-        function addVisitor(){
-             var Visit = Bmob.Object.extend("JSVisitBean");
-                var visitor = new Visit();
-                visitor.set("name", $("#name").val());
-                visitor.save(null, {
-                  success: function(object) {
-                   alert("踩我成功(very nice)")
-                  },
-                  error: function(model, error) {
-                    alert("踩我失败(try again)" + error)
-                  }
-                });
-        }
-
-        $("#send").click(function(){
-            addVisitor();
-        });
-
-        //服务器
-        BmobSocketIo.initialize("07b752a64abdf34127887ada169d9709");
-        Bmob.initialize("07b752a64abdf34127887ada169d9709", "b9860c827bc48a7f9400d2b07b760661");
-
-    </script>
-
-    <br>
-
-    <div class="banner">
-        <ul class="banList">
-            <li class="active"><a href="http://sc.chinaz.com/"><img src="image/img1.jpg"/></a></li>
-            <li><a href="http://sc.chinaz.com/"><img src="image/img2.jpg"/></a></li>
-            <li><a href="http://sc.chinaz.com/"><img src="image/img3.jpg"/></a></li>
-        </ul>
-        <div class="fomW">
-            <div class="jsNav">
-                <a href="javascript:;" class="trigger current"></a>
-                <a href="javascript:;" class="trigger"></a>
-                <a href="javascript:;" class="trigger"></a>
-            </div>
+        <div style="height:100%;float:right;margin-right:20;">
+            <!--<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.js"></script>-->
+            <script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
         </div>
     </div>
 
     <script type="text/javascript">
-        $(function(){
-            $(".banner").swBanner();
-        });
+            function addVisitor(){
+                 var Visit = Bmob.Object.extend("JSVisitBean");
+                    var visitor = new Visit();
+                    visitor.set("name", $("#name").val());
+                    visitor.save(null, {
+                      success: function(object) {
+                       alert("踩我成功(very nice)")
+                      },
+                      error: function(model, error) {
+                        alert("踩我失败(try again)" + error)
+                      }
+                    });
+            }
+
+            $("#send").click(function(){
+                addVisitor();
+            });
+
+            //服务器
+            BmobSocketIo.initialize("07b752a64abdf34127887ada169d9709");
+            Bmob.initialize("07b752a64abdf34127887ada169d9709", "b9860c827bc48a7f9400d2b07b760661");
+
+
+
+
+
+
     </script>
+</div>
+<section class="sidebar">
+    <div class="subNav"><h5>训明之家</h5></div>
+    <hr/>
+    <div class="subNav"><h6><a href="#">首页</a></h6></div>
+    <div class="subNav"><h6><a href="#">代码</a></h6></div>
+    <div class="subNav"><h6><a href="message.html">留言</a></h6></div>
+    <div class="subNav"><h6><a href="music.html">音乐</a></h6></div>
+    <div class="subNav"><h6><a href="about.html">关于</a></h6></div>
+    <ul class="navContent">
+        <li><a href="#">微信公众号</a></li>
+        <li><a href="#">个人网站</a></li>
+        <li><a href="#">App</a></li>
+        <li><a href="#">其他博客</a></li>
+    </ul>
+</section>
+
+<script type="text/javascript">
+$( document ).ready(function() {
+	$( '.sidebar' ).simpleSidebar({
+		settings: {
+			opener: '#open-sb',
+			wrapper: '.wrapper',
+			animation: {
+				duration: 500,
+				easing: 'easeOutQuint'
+			}
+		},
+		sidebar: {
+			align: 'left',
+			width: 200,
+			closingLinks: 'a',
+		}
+	});
+});
+
+
+
+</script>
+
+<script type="text/javascript">
+$(function(){
+$(".subNav").click(function(){
+			// 修改数字控制速度， slideUp(500)控制卷起速度
+			$(this).next(".navContent").slideToggle(500);
+	})
+})
+
+
+
+</script>
+
+<div class="content">
+
+    <div class="top">
+        <div style="position:relative;height:97%;width:100%;">
+            <a href="#"><img
+                    style="position:absolute;left:0px;top:0px;width:100%;height:100%;z-Index:-1;"
+                    src="image/main_bg.jpg"/></a>
+
+        </div>
+
+
+    </div>
+    <br>
     <br>
 
 
+    <!-- 推荐文章 -->
+
     <dl class="list_dl">
-        <dt><b>推荐文章</b><a href="#" class="more">>>更多</a></dt>
+        <dt><b>推荐文章</b><a href="http://blog.csdn.net/diyangxia" class="more">>>更多</a></dt>
         <dd>
             <ul>
-                <li><span>16-05-14</span><a href="#" class="link1">[测试文章]</a> Android
+                <li><span>16-05-14</span><a href="#" class="link1">[测试文章]</a>
                     Studio多渠道批量打包及代码混淆
                 </li>
-                <li><span>16-04-27</span><a href="#" class="link1">[测试文章]</a>
-                    Android中通过Exifinterface读取图片地理位置信息
+                <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a>
+                    RecyclerView的使用心得记录
                 </li>
-                <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a> RecyclerView的使用心得记录
+                <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a>
+                    Android省市区滚轮默认显示已选择的项
                 </li>
-                <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a> Android省市区滚轮默认显示已选择的项
+                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a>
+                    Excel中根据XML映射导出XML数据
                 </li>
-                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                <li><span>16-05-14</span><a href="#" class="link1">[测试文章]</a>
+                    Studio多渠道批量打包及代码混淆
                 </li>
-                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a>
+                    RecyclerView的使用心得记录
                 </li>
-                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a>
+                    Android省市区滚轮默认显示已选择的项
                 </li>
-                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a>
+                    Excel中根据XML映射导出XML数据
                 </li>
-                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a> Excel中根据XML映射导出XML数据
+                <li><span>16-05-14</span><a href="#" class="link1">[测试文章]</a>
+                    Studio多渠道批量打包及代码混淆
+                </li>
+                <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a>
+                    RecyclerView的使用心得记录
+                </li>
+                <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a>
+                    Android省市区滚轮默认显示已选择的项
+                </li>
+                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a>
+                    Excel中根据XML映射导出XML数据
                 </li>
             </ul>
         </dd>
     </dl>
-    <br>
-    <br>
-    <li style="float:left">
+
+
+    <div class="right">
+
+        <div style="width:100;margin:0 auto;text-align:center;"><a href=""><img
+                src="image/avatar.png" width="100px"/></a><br>
+        </div>
+        <div style="width:100;font-size:12;text-align:center;margin:0 auto;">刘训明</div>
+        <br>
         <script type="text/javascript" id="clustrmaps"
                 src="//cdn.clustrmaps.com/map_v2.js?u=2aE0&d=decH5PwlyGeWGwud8Zke-95l1BupBAoU-b77gZ1vUhU"></script>
-    </li>
+        <br>
+
+
+    </div>
+
     <br>
     <br>
     <br>
@@ -340,6 +386,11 @@
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(bp, s);
 })();
+
+
+
+
+
 
 </script>
 
