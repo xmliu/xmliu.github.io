@@ -10,3 +10,7 @@
 1.index menu style:ref--><http://www.mycodes.net/152/8391.htm>;like <https://www.starbucks.com.cn/>.<br>
 2.article style:ref--><https://www.douban.com/note/429860412/>.<br>
 3.banner style:ref--><http://sc.chinaz.com/jiaoben/140828174820.htm>.<br>
+
+## clock see:
+<http://chabudai.org/blog/?p=59>
+<http://chabudai.sakura.ne.jp/blog/wp-content/uploads/2008/09/honehone_clock.swf>
