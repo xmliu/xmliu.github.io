@@ -179,6 +179,7 @@
                     visitor.save(null, {
                       success: function(object) {
                        alert("踩我成功(very nice)")
+                       document.getElementById("name").value="";
                       },
                       error: function(model, error) {
                         alert("踩我失败(try again)" + error)
