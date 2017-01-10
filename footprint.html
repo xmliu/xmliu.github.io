@@ -1,0 +1,74 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <Link Rel="SHORTCUT ICON" href="image/website_logo.png">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.simplesidebar.js"></script>
+    <script src="js/bmobSocketIo.js"></script>
+    <script src="js/bmob.js"></script>
+
+    <title>Home of Xunming</title>
+</head>
+<body>
+<div>
+<div style="margin:0 auto;text-align:center; ">
+    <input type="text" id="name" placeholder="来自哪里(come from?)">
+    <button name="点我试试" id="send">用力踩我(Click me)</button>
+</div>
+<script type="text/javascript">
+            function addVisitor(){
+                 var Visit = Bmob.Object.extend("JSVisitBean");
+                    var visitor = new Visit();
+                    visitor.set("name", $("#name").val());
+                    visitor.save(null, {
+                      success: function(object) {
+                       alert("踩我成功(very nice)")
+                       document.getElementById("name").value="";
+                      },
+                      error: function(model, error) {
+                        alert("踩我失败(try again)" + error)
+                      }
+                    });
+            }
+
+
+
+            $("#send").click(function(){
+            var keyVal= $("#name").val();
+                if(keyVal.length==0){
+                    alert("随便写点什么吧");
+                } else{
+                    addVisitor();
+                }
+            });
+
+            //服务器
+            BmobSocketIo.initialize("07b752a64abdf34127887ada169d9709");
+            Bmob.initialize("07b752a64abdf34127887ada169d9709", "b9860c827bc48a7f9400d2b07b760661");
+    </script>
+</div>
+<!-- 百度站长自动推送代码 http://zhanzhang.baidu.com/linksubmit/index-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<br>
+<br>
+<div style="margin:0 auto;text-align:center; ">
+<font size="2" color="grey">本网站模板参考自<a href="http://www.gbtags.com/gb/share/3796.htm" target="_blank">这里</a></font>
+    </div>
+</body>
+
+</html>

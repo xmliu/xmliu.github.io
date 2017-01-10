@@ -1,388 +1,303 @@
-<html lang="zh-cn">
+<!DOCTYPE html>
+<html>
+
 <head>
     <Link Rel="SHORTCUT ICON" href="image/website_logo.png">
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="js/jquery.simplesidebar.js"></script>
-    <script src="js/bmobSocketIo.js"></script>
-    <script src="js/bmob.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="模板来源：极客标签社区http://www.cnblogs.com/gbin1/p/3979198.html">
+    <meta name="author" content="gbtags.com">
 
     <title>Home of Xunming</title>
-    <style type="text/css">
 
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
-        .footer{
-        position:relative;
-        width:100%;
-        float:left;
-        bottom:0;
-        }
-        .header{
-        position:absolute;top:0;
-        left:0;
-        background:#274e13;
-        height:60px;
-        width:100%;
-        }
-        .copyright p{
-        text-align:center;
-        color: grey;
-        font-size:13;
-        }
-        .nav-ul{
-        margin-left:100px;
-        color: #c5c5c5;
-        }
-        .nav-ul li{
-        margin-left:100px;
-        float:left;
-        }
-        .nav-ul a{
-        text-decoration: none;
-        color:white;
-        }
-        .nav-ul a:hover{text-decoration:underline;}
-        .content{
-        margin-top:68;
-        }
-        .logo-t{height:40;float:left;margin:10;}
-
-
-        .list_dl ul,li,ol,dl,dt,dd{
-        padding:0px;
-        margin:0px;
-        list-style-type: none;
-        }
-        .list_dl a{ text-decoration: none;}
-        .list_dl{
-        float:left;
-        width:80%;
-        height:30%;
-        margin-bottom:8px;
-        margin-left:20px;
-        margin-right:20px;
-        font-size:10pt;
-        }
-        .list_dl dt{
-        width:100%;
-        height:24px;
-        margin-bottom:1px;
-        background-color:#003366;
-        border-bottom-width: 2px;
-        border-bottom-style: solid;
-        border-bottom-color: #FF9933;
-        }
-        .list_dl dt b{float:left;
-        width:240px;
-        height:24px;
-        line-height:24px;
-        display:block;
-        color:#FFFFFF;
-        margin-left:12px;}
-        .list_dl dt a{
-        width:5em;
-        height:23px;
-        display:block;
-        line-height:23px;
-        margin-top:1px;
-        color:#FFFFFF;
-        float:right;
-        text-align:right;
-        padding-right:10px;}
-        .list_dl dt a.more{
-        color:#C1CEDB;}
-        .list_dl dt a.more:hover{
-        color:#fff;
-        }
-        .list_dl dd{
-        display:block;
-        margin-top:4px;
-        clear:both;}
-        .list_dl ul li{
-        text-align:left;
-        text-indent: 1.3em;
-        line-height:220%;
-        border-bottom-width: 1px;
-        border-bottom-style: dashed;
-        border-bottom-color: #CCCCCC;
-        background-image: url(images/list_ico.gif);
-        background-repeat:no-repeat;
-        background-position: 4px center;
-        }
-        a.link1{color:#797979;}
-        .list_dl ul li span{
-        float:right;
-        color:#9B9B9B;
-        margin-right:7px;
-        }
-
-
-        .right{
-        padding:0px;
-        width:15%;
-        margin:0px;
-        list-style-type: none;
-        float:left;
-        text-align:center;
-        }
-
-
-    </style>
-    <!-- 以下为百度站长统计脚本，统计报告进入后台查看 -->
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "//hm.baidu.com/hm.js?6c1a23e42da4fdbc3e9ddb1a9339bee2";
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(hm, s);
-        })();
-
-
-
-
-
-    </script>
+    <!-- Fonts -->
+    <link href="bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap/css/animate.css" rel="stylesheet" />
+    <!-- Squad theme CSS -->
+    <link href="bootstrap/css/style.css" rel="stylesheet">
+    <link href="bootstrap/color/default.css" rel="stylesheet">
 
 </head>
-<body>
-<div class="toolbar">
-    <div id="open-sb" class="menu-button menu-left"></div>
 
-    <div style="text-align:center">
-        <a href=""><img src="image/website_logo_nav.png" width="40"
-                        height="40"/></a>
-
-        <div style="float:right;margin-right:20;">
-            <input type="text" id="name" placeholder="来自哪里(come from?)">
-            <button name="点我试试" id="send">用力踩我(Click me)</button>
-        </div>
-        <div style="height:100%;float:right;margin-right:20;">
-            <!--<script charset="Shift_JIS" src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_wh.js"></script>-->
-            <script charset="Shift_JIS"
-                    src="http://chabudai.sakura.ne.jp/blogparts/honehoneclock/honehone_clock_tr.js"></script>
-        </div>
-    </div>
-
-    <script type="text/javascript">
-            function addVisitor(){
-                 var Visit = Bmob.Object.extend("JSVisitBean");
-                    var visitor = new Visit();
-                    visitor.set("name", $("#name").val());
-                    visitor.save(null, {
-                      success: function(object) {
-                       alert("踩我成功(very nice)")
-                       document.getElementById("name").value="";
-                      },
-                      error: function(model, error) {
-                        alert("踩我失败(try again)" + error)
-                      }
-                    });
-            }
-
-
-
-            $("#send").click(function(){
-            var keyVal= $("#name").val();
-                if(keyVal.length==0){
-                    alert("随便写点什么吧");
-                } else{
-                    addVisitor();
-                }
-            });
-
-            //服务器
-            BmobSocketIo.initialize("07b752a64abdf34127887ada169d9709");
-            Bmob.initialize("07b752a64abdf34127887ada169d9709", "b9860c827bc48a7f9400d2b07b760661");
-
-
-
-
-
-
-
-    </script>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Preloader -->
+<div id="preloader">
+    <div id="load"></div>
 </div>
-<section class="sidebar">
-    <div class="subNav"><h5>Home of Xunming</h5></div>
-    <hr/>
-    <div class="subNav"><h6><a href="#">首页</a></h6></div>
-    <div class="subNav"><h6><a href="#">代码</a></h6></div>
-    <div class="subNav"><h6><a href="message.html">留言</a></h6></div>
-    <div class="subNav"><h6><a href="music.html">音乐</a></h6></div>
-    <div class="subNav"><h6><a href="about.html">关于</a></h6></div>
-    <ul class="navContent">
-        <li><a href="#">微信公众号</a></li>
-        <li><a href="#">个人网站</a></li>
-        <li><a href="#">App</a></li>
-        <li><a href="#">其他博客</a></li>
-    </ul>
-</section>
 
-<script type="text/javascript">
-$( document ).ready(function() {
-	$( '.sidebar' ).simpleSidebar({
-		settings: {
-			opener: '#open-sb',
-			wrapper: '.wrapper',
-			animation: {
-				duration: 500,
-				easing: 'easeOutQuint'
-			}
-		},
-		sidebar: {
-			align: 'left',
-			width: 200,
-			closingLinks: 'a',
-		}
-	});
-});
-
-
-
-
-</script>
-
-<script type="text/javascript">
-$(function(){
-$(".subNav").click(function(){
-			// 修改数字控制速度， slideUp(500)控制卷起速度
-			$(this).next(".navContent").slideToggle(500);
-	})
-})
-
-
-
-
-</script>
-
-<div class="content">
-
-    <div class="top">
-        <div style="position:relative;height:40%;width:100%;">
-            <a href="#"><img
-                    style="position:absolute;left:0px;top:0px;width:100%;height:100%;z-Index:-1;"
-                    src="image/main_bg.jpg"/></a>
-            <div style="width:100;margin:0 auto;text-align:center;"><a href=""><img
-                    src="image/avatar.png" width="100px"/></a><br>
-            </div>
-            <div style="width:200;font-size:20;color:white;text-align:center;margin:0 auto;">Xunming`s Blog</div>
-            <br>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.html">
+                <h1>Xun Ming</h1>
+            </a>
         </div>
 
-
-    </div>
-    <br>
-    <br>
-
-
-    <!-- 推荐文章 -->
-
-    <dl class="list_dl">
-        <dt><b>推荐文章</b><a href="http://blog.csdn.net/diyangxia" class="more">>>更多</a></dt>
-        <dd>
-            <ul>
-                <li><span>16-05-14</span><a href="#" class="link1">[测试文章]</a>
-                    Studio多渠道批量打包及代码混淆
-                </li>
-                <li><span>16-03-21</span><a href="#" class="link1">[测试文章]</a>
-                    RecyclerView的使用心得记录
-                </li>
-                <li><span>16-02-12</span><a href="#" class="link1">[测试文章]</a>
-                    Android省市区滚轮默认显示已选择的项
-                </li>
-                <li><span>16-01-07</span><a href="#" class="link1">[测试文章]</a>
-                    Excel中根据XML映射导出XML数据
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#intro">主页</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#service">留言</a></li>
+                <li><a href="#contact">音乐</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="footprint.html" target="_blank">单独踩我</a></li>
+                        <li><a href="#">虚位以待</a></li>
+                    </ul>
                 </li>
             </ul>
-        </dd>
-    </dl>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
 
+<!-- Section: intro -->
+<section id="intro" class="intro">
 
-    <div class="right">
-
-
-        <script type="text/javascript" id="clustrmaps"
-                src="//cdn.clustrmaps.com/map_v2.js?u=2aE0&d=decH5PwlyGeWGwud8Zke-95l1BupBAoU-b77gZ1vUhU"></script>
-        <br>
-
+    <div class="slogan">
+        <h2>欢迎光临 <span class="text_color">xm home</span> </h2>
+        <h4>一个集跑步、编程、旅游、音乐于一身的90后</h4>
+        <h3><a href="http://blog.csdn.net/diyangxia" target="_blank" style="color:white">CSDN BLOG</a></h3>
 
     </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-</div>
-<footer class="footer">
-
-
-    <div class="copyright">
-
-        <p>本站文章仅用于学习交流，如有侵权，请告知删除</p>
-
-        <p>Copyright 2011 - 2016 liuxunming.com All Rights Reversed.<a
-                href="http://tongji.baidu.com/web/welcome/ico?s=6c1a23e42da4fdbc3e9ddb1a9339bee2"
-                target="_blank"><img src="image/baiducount.gif"/> </a></p>
+    <div class="page-scroll">
+        <a href="#service" class="btn btn-circle">
+            <i class="fa fa-angle-double-down animated"></i>
+        </a>
     </div>
+</section>
+<!-- /Section: intro -->
+
+<!-- Section: about -->
+<section id="about" class="home-section text-center">
+    <div class="heading-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>关于我</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-xs-6 col-sm-3 col-md-3">
+                <div class="wow bounceInUp" data-wow-delay="0.2s">
+                    <div class="team boxed-grey">
+                        <div class="inner">
+                            <h5>我的App</h5>
+                            <p class="subtitle">好旅</p>
+                            <div class="avatar"><img width="100%" src="image/app_qr.png" alt="" class="img-responsive" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3">
+                <div class="wow bounceInUp" data-wow-delay="0.5s">
+                    <div class="team boxed-grey">
+                        <div class="inner">
+                            <h5>微信公众号</h5>
+                            <p class="subtitle">主测试用</p>
+                            <div class="avatar"><img width="100%" src="image/weixin_qr.jpg" alt="" class="img-responsive" /></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3">
+                <div class="wow bounceInUp" data-wow-delay="0.8s">
+                    <div class="team boxed-grey">
+                        <div class="inner">
+                            <h5>我的头像</h5>
+                            <p class="subtitle">通用</p>
+                            <div class="avatar">
+                                <div class="avatar"><img width="100%" src="image/avatar.png" alt="" class="img-responsive img-circle" /></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3">
+                <div class="wow bounceInUp" data-wow-delay="1s">
+                    <div class="team boxed-grey">
+                        <div class="inner">
+                            <h5>访问足迹</h5>
+                            <p class="subtitle">点击可查看详情</p>
+                            <div class="avatar"><script type="text/javascript" id="clustrmaps"
+                                                        src="//cdn.clustrmaps.com/map_v2.js?u=2aE0&d=decH5PwlyGeWGwud8Zke-95l1BupBAoU-b77gZ1vUhU"></script></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Section: about -->
 
 
+<!-- Section: services -->
+<section id="service" class="home-section text-center bg-gray">
+
+    <div class="heading-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>留言板</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <div class="wow fadeInLeft" data-wow-delay="0.2s">
+
+                    <!-- 多说评论框 start -->
+                    <div class="ds-thread" data-thread-key="mypage" data-title="留言" data-url="message.html"></div>
+                    <!-- 多说评论框 end -->
+                    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                    <script type="text/javascript">
+var duoshuoQuery = {short_name:"xmliu"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+
+    </script>
+                    <!-- 多说公共JS代码 end -->
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- /Section: services -->
+
+
+
+
+<!-- Section: contact -->
+<section id="contact" class="home-section text-center">
+    <div class="heading-contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="wow bounceInDown" data-wow-delay="0.4s">
+                        <div class="section-heading">
+                            <h2>听音乐</h2>
+                            <i class="fa fa-2x fa-angle-down"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-2 col-lg-offset-5">
+                <hr class="marginbot-50">
+            </div>
+        </div>
+        <div class="row">
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="http://music.163.com/outchain/player?type=0&id=109789316&auto=1&height=430"></iframe>
+
+        </div>
+
+    </div>
+</section>
+<!-- /Section: contact -->
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12">
+                <div class="wow shake" data-wow-delay="0.4s">
+                    <div class="page-scroll marginbot-30">
+                        <a href="#intro" id="totop" class="btn btn-circle">
+                            <i class="fa fa-angle-double-up animated"></i>
+                        </a>
+                    </div>
+                </div>
+                <p>本站文章仅用于学习交流，如有侵权，请告知删除</p>
+                <p>&copy;Copyright 2016 - 2017 liuxunming.com All Rights Reversed.<a
+                        href="http://tongji.baidu.com/web/welcome/ico?s=6c1a23e42da4fdbc3e9ddb1a9339bee2"
+                        target="_blank"><img src="image/baiducount.gif"/> </a></p>
+            </div>
+        </div>
+    </div>
 </footer>
+
 <!-- 百度站长自动推送代码 http://zhanzhang.baidu.com/linksubmit/index-->
 <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+	</script>
 
+<!-- Core JavaScript Files -->
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/jquery.easing.min.js"></script>
+<script src="bootstrap/js/jquery.scrollTo.js"></script>
+<script src="bootstrap/js/wow.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="bootstrap/js/custom.js"></script>
 
-
-
-
-
-
-</script>
-
+<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fac45a0f68a119fbe4d1c4c3ac3044dbd' type='text/javascript'%3E%3C/script%3E"));
+	</script>
 </body>
+
 </html>
