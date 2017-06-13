@@ -15,7 +15,7 @@
 
     <!-- Fonts -->
     <link href="bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="bootstrap/css/animate.css" rel="stylesheet" />
+    <link href="bootstrap/css/animate.css" rel="stylesheet"/>
     <!-- Squad theme CSS -->
     <link href="bootstrap/css/style.css" rel="stylesheet">
     <link href="bootstrap/color/default.css" rel="stylesheet">
@@ -31,7 +31,8 @@
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target=".navbar-main-collapse">
                 <i class="fa fa-bars"></i>
             </button>
             <a class="navbar-brand" href="index.html">
@@ -47,7 +48,8 @@
                 <li><a href="#service">留言</a></li>
                 <li><a href="#contact">音乐</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多 <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多 <b
+                            class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="footprint.html" target="_blank">单独踩我</a></li>
                         <li><a href="#">虚位以待</a></li>
@@ -64,9 +66,10 @@
 <section id="intro" class="intro">
 
     <div class="slogan">
-        <h2>欢迎光临 <span class="text_color">xm home</span> </h2>
+        <h2>欢迎光临 <span class="text_color">xm home</span></h2>
         <h4>一个集跑步、编程、旅游、音乐于一身的90后</h4>
-        <h3><a href="http://blog.csdn.net/diyangxia" target="_blank" style="color:white">CSDN BLOG</a></h3>
+        <h3><span style="color:white;">访问博客请点击 </span><a href="http://blog.csdn.net/diyangxia" target="_blank" style="color:red">CSDN
+            BLOG</a></h3>
 
     </div>
     <div class="page-scroll">
@@ -109,7 +112,8 @@
                         <div class="inner">
                             <h5>我的App</h5>
                             <p class="subtitle">好旅</p>
-                            <div class="avatar"><img width="100%" src="image/app_qr.png" alt="" class="img-responsive" /></div>
+                            <div class="avatar"><img width="100%" src="image/app_qr.png" alt=""
+                                                     class="img-responsive"/></div>
                         </div>
                     </div>
                 </div>
@@ -120,7 +124,8 @@
                         <div class="inner">
                             <h5>微信公众号</h5>
                             <p class="subtitle">主测试用</p>
-                            <div class="avatar"><img width="100%" src="image/weixin_qr.jpg" alt="" class="img-responsive" /></div>
+                            <div class="avatar"><img width="100%" src="image/weixin_qr.jpg" alt=""
+                                                     class="img-responsive"/></div>
 
                         </div>
                     </div>
@@ -133,7 +138,8 @@
                             <h5>我的头像</h5>
                             <p class="subtitle">通用</p>
                             <div class="avatar">
-                                <div class="avatar"><img width="100%" src="image/avatar.png" alt="" class="img-responsive img-circle" /></div>
+                                <div class="avatar"><img width="100%" src="image/avatar.png" alt=""
+                                                         class="img-responsive img-circle"/></div>
                             </div>
 
                         </div>
@@ -146,8 +152,10 @@
                         <div class="inner">
                             <h5>访问足迹</h5>
                             <p class="subtitle">点击可查看详情</p>
-                            <div class="avatar"><script type="text/javascript" id="clustrmaps"
-                                                        src="//cdn.clustrmaps.com/map_v2.js?u=2aE0&d=decH5PwlyGeWGwud8Zke-95l1BupBAoU-b77gZ1vUhU"></script></div>
+                            <div class="avatar">
+                                <script type="text/javascript" id="clustrmaps"
+                                        src="//cdn.clustrmaps.com/map_v2.js?u=2aE0&d=decH5PwlyGeWGwud8Zke-95l1BupBAoU-b77gZ1vUhU"></script>
+                            </div>
 
                         </div>
                     </div>
@@ -186,34 +194,26 @@
         <div class="row">
             <div>
                 <div class="wow fadeInLeft" data-wow-delay="0.2s">
-
-                    <!-- 多说评论框 start -->
-                    <div class="ds-thread" data-thread-key="mypage" data-title="留言" data-url="message.html"></div>
-                    <!-- 多说评论框 end -->
-                    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-                    <script type="text/javascript">
-var duoshuoQuery = {short_name:"xmliu"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0]
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-
-    </script>
-                    <!-- 多说公共JS代码 end -->
+                    <!-- 网易云跟帖公共JS代码 start -->
+                    <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+                    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+                    <script>
+                        var cloudTieConfig = {
+                          url: document.location.href,
+                          sourceId: "",
+                          productKey: "ede2cc6c6b794849b92149438bb1e5ca",
+                          target: "cloud-tie-wrapper"
+                        };
+                        var yunManualLoad = true;
+                        Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+                    </script>
+                    <!-- 网易云跟帖公共JS代码 end -->
                 </div>
-
             </div>
-
         </div>
     </div>
 </section>
 <!-- /Section: services -->
-
-
 
 
 <!-- Section: contact -->
@@ -241,7 +241,9 @@ var duoshuoQuery = {short_name:"xmliu"};
             </div>
         </div>
         <div class="row">
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="http://music.163.com/outchain/player?type=0&id=109789316&auto=1&height=430"></iframe>
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330
+                    height=450
+                    src="http://music.163.com/outchain/player?type=0&id=109789316&auto=1&height=430"></iframe>
 
         </div>
 
@@ -283,7 +285,8 @@ var duoshuoQuery = {short_name:"xmliu"};
 		var s = document.getElementsByTagName("script")[0];
 		s.parentNode.insertBefore(bp, s);
 	})();
-	</script>
+
+</script>
 
 <!-- Core JavaScript Files -->
 <script src="bootstrap/js/jquery.min.js"></script>
@@ -297,7 +300,8 @@ var duoshuoQuery = {short_name:"xmliu"};
 <script type="text/javascript">
 	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fac45a0f68a119fbe4d1c4c3ac3044dbd' type='text/javascript'%3E%3C/script%3E"));
-	</script>
+
+</script>
 </body>
 
 </html>
