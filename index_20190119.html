@@ -5,14 +5,28 @@
     <Link Rel="SHORTCUT ICON" href="image/website_logo.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="模板来源：极客标签社区http://www.cnblogs.com/gbin1/p/3979198.html">
+    <meta name="author" content="gbtags.com">
 
     <title>Home of Xunming</title>
 
+    <!-- Bootstrap Core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="bootstrap/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap/css/animate.css" rel="stylesheet"/>
+    <!-- Squad theme CSS -->
+    <link href="bootstrap/css/style.css" rel="stylesheet">
+    <link href="bootstrap/color/default.css" rel="stylesheet">
 
 </head>
 
-<body>
-
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+<!-- Preloader -->
+<div id="preloader">
+    <div id="load"></div>
+</div>
 
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
     <div class="container">
@@ -52,12 +66,16 @@
 <section id="intro" class="intro">
 
     <div class="slogan">
-        <h3><span class="text_color">访问博客请点击 </span><a href="http://blog.csdn.net/diyangxia" target="_blank" style="color:red">BLOG</a></h3>
+        <h3><span style="color:white;">访问博客请点击 </span><a href="http://blog.csdn.net/diyangxia" target="_blank" style="color:yellow">BLOG</a></h3>
         <h2>欢迎光临 <span class="text_color">xm home</span></h2>
         <h4>爱美食、爱运动、爱自己、爱他人、爱生活、爱世界</h4>
         <h4>感恩社会、感谢有你</h4>
     </div>
-
+    <div class="page-scroll">
+        <a href="#service" class="btn btn-circle">
+            <i class="fa fa-angle-double-down animated"></i>
+        </a>
+    </div>
 </section>
 <!-- /Section: intro -->
 
@@ -104,9 +122,24 @@
                     <div class="team boxed-grey">
                         <div class="inner">
                             <h5>微信公众号</h5>
-                            <p class="subtitle">个人记录</p>
+                            <p class="subtitle">主测试用</p>
                             <div class="avatar"><img width="100%" src="image/weixin_qr.jpg" alt=""
                                                      class="img-responsive"/></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-3">
+                <div class="wow bounceInUp" data-wow-delay="0.8s">
+                    <div class="team boxed-grey">
+                        <div class="inner">
+                            <h5>我的头像</h5>
+                            <p class="subtitle">通用</p>
+                            <div class="avatar">
+                                <div class="avatar"><img width="100%" src="image/avatar.png" alt=""
+                                                         class="img-responsive img-circle"/></div>
+                            </div>
 
                         </div>
                     </div>
@@ -130,6 +163,56 @@
         </div>
     </div>
 </section>
+<!-- /Section: about -->
+
+
+<!-- Section: services -->
+<!--<section id="service" class="home-section text-center bg-gray" >-->
+
+    <!--<div class="heading-about">-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-lg-8 col-lg-offset-2">-->
+                    <!--<div class="wow bounceInDown" data-wow-delay="0.4s">-->
+                        <!--<div class="section-heading">-->
+                            <!--<h2>留言板</h2>-->
+                            <!--<i class="fa fa-2x fa-angle-down"></i>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="col-lg-2 col-lg-offset-5">-->
+                <!--<hr class="marginbot-50">-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div>-->
+                <!--<div class="wow fadeInLeft" data-wow-delay="0.2s">-->
+                    <!--&lt;!&ndash; 网易云跟帖公共JS代码 start &ndash;&gt;-->
+                    <!--<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>-->
+                    <!--<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>-->
+                    <!--<script>-->
+                        <!--var cloudTieConfig = {-->
+                          <!--url: document.location.href,-->
+                          <!--sourceId: "",-->
+                          <!--productKey: "ede2cc6c6b794849b92149438bb1e5ca",-->
+                          <!--target: "cloud-tie-wrapper"-->
+                        <!--};-->
+                        <!--var yunManualLoad = true;-->
+                        <!--Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);-->
+                    <!--</script>-->
+                    <!--&lt;!&ndash; 网易云跟帖公共JS代码 end &ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</section>-->
+<!-- /Section: services -->
 
 
 <!-- Section: contact -->
@@ -157,7 +240,7 @@
             </div>
         </div>
         <div class="row">
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=92%
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330
                     height=450
                     src="http://music.163.com/outchain/player?type=0&id=109789316&auto=1&height=430"></iframe>
 
@@ -203,6 +286,15 @@
 	})();
 
 </script>
+
+<!-- Core JavaScript Files -->
+<script src="bootstrap/js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/jquery.easing.min.js"></script>
+<script src="bootstrap/js/jquery.scrollTo.js"></script>
+<script src="bootstrap/js/wow.min.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="bootstrap/js/custom.js"></script>
 
 <script type="text/javascript">
 	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
