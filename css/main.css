@@ -18,3 +18,7 @@ section{margin:4em 0;}
 .subNav h5{cursor:pointer;text-align:center;}
 .subNav h6{cursor:pointer;text-align:center;margin-top:50px;}
 .navContent{display:none;color:#999;}
+canvas#live2dcanvas {
+border: 0 !important;
+left: 0;
+}
